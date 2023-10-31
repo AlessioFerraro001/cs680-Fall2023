@@ -1,0 +1,5 @@
+My program Patreon emulates a typical Observer-based subscription model, with the addition of a multiple tiered system seen in subscription sites such as Patreon.com, where higher tiered membership allows for greater access.
+
+My program implements the provided generic Observer and Observable, along with a custom PatreonObservable, PatreonPost, and 3 different PatronObservers tiered 1-3.
+
+When a user wishes to send out a post to all their patrons, they will send out a PatreonPost type element, which contains the text message and a tier number between 1-3. This will be sent out to all the PatronObservers attached to this PatreonObservers utilizing the methods in the premade classes. When each of these observers recieves the post, what they will display will depend on the tier of the subscriber and the tier of the post. If the post's tier <= the subscriber's tier, then it will be displayed as normal. If the post's tier is > the subscriber's tier though, only the first sentance will be displayed, followed by a prompt for the subscriber to upgrade their subscription to access the rest of the post.
